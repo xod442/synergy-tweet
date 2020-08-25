@@ -8,7 +8,7 @@ input:
 
 tasks:
   format_tweet:
-    action: synergy-tweet.format_tweet
+    action: synergytweet.format_tweet
     input:
       tweet_body: "<% ctx().tweet_body %>"
     next:
