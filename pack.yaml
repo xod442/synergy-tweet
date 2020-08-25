@@ -1,0 +1,12 @@
+---
+ref: synergy-tweet
+name: synergy-tweet
+description: HPE Synergy-OneView Twitter Integration Pack
+keywords:
+  - Synergy
+  - OneView
+version: 0.1.2
+python_versions:
+  - "3"
+author: Rick Kauffman
+email: rick.a.kauffman@hpe.com

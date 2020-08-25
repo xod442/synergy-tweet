@@ -1,0 +1,13 @@
+---
+name: "process_synergy_tweet_rule"
+description: "If tweet from netwookie, process it."
+enabled: true
+
+trigger:
+  type: "twitter.matched_tweet"
+  parameters: {}
+
+action:
+  ref: "synergy-tweet.process_synergy-tweet"
+  parameters:
+    tweet_body: "{{ trigger }}"

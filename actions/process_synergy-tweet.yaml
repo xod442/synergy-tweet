@@ -1,0 +1,10 @@
+---
+name: process_synergy-tweet
+description: A workflow for processing a tweet with data and sending to the HPE OneView instance.
+runner_type: orquesta
+entry_point: workflows/process_synergy-tweet.yaml
+enabled: true
+parameters:
+  tweet_body:
+    required: true
+    type: object

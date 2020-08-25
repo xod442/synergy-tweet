@@ -1,0 +1,28 @@
+version: '1.0'
+
+description: "A workflow that gets a trigger from twitter and processes the data."
+
+input:
+  - tweet_body
+
+
+tasks:
+  format_tweet:
+    action: synergy-tweet.format_tweet
+    input:
+      tweet_body: "<% ctx().tweet_body %>"
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - vlan_object: <% result().result %>
+        do: send_to_oneview
+
+  send_to_oneview:
+    action: hpeoneview.post_vlan
+    input:
+      vlanId: "<% ctx().vlan_object[1] %>"
+      name: "<% ctx().vlan_object[2] %>"
+      purpose: "<% ctx().vlan_object[3] %>"
+      smartLink: "<% ctx().vlan_object[4] %>"
+      privateNetwork: "<% ctx().vlan_object[5] %>"
+      ethernetNetworkType: "<% ctx().vlan_object[6] %>"
