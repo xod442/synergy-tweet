@@ -1,4 +1,4 @@
-# synergy-tweet
+# synergytweet
 Tweet things into a HPE Synergy OneView
 
 

@@ -1,6 +1,6 @@
 ---
 name: format_tweet
-pack: tweetops
+pack: synergytweet
 description: process dictionary into actionable items
 runner_type: python-script
 entry_point: format_tweet.py

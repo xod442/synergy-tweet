@@ -8,6 +8,6 @@ trigger:
   parameters: {}
 
 action:
-  ref: "synergy-tweet.process_synergy-tweet"
+  ref: "synergytweet.process_synergy-tweet"
   parameters:
     tweet_body: "{{ trigger }}"
