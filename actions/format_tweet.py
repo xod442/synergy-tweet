@@ -28,17 +28,17 @@ class FormatTweet(Action):
 
     def run(self, tweet_body):        # Get trigger dictionaary.
         if tweet_body['user']['screen_name'] == 'netwookie':
+            print('found your tweet')
             line = tweet_body['text']
             # Anything between two slashes is the data we want
             vlan_data={}
             x,vlan,y = line.split('/')
             # Build vlan dictionary for OneView
             vlanId=vlan
-            name='Automated vlan via with Twitter & StackStorm'
+            name='Automated vlan via Twitter & StackStorm'
             purpose="General"
             smartLink=False
             privateNetwork=False
-            connectionTemplateUri=None
             ethernetNetworkType='Tagged'
             # type='ethernet-networkV4'
-        return (True, vlanId,name,purpose,smartLink,privateNetwork,connectionTemplateUri,ethernetNetworkType)
+            return (True, vlanId,name,purpose,smartLink,privateNetwork,ethernetNetworkType)
